@@ -1,0 +1,71 @@
+
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Silksong release countdown</title>
+  </head>
+
+  <body style="text-align: center">
+    <link rel="stylesheet" href="./Silksong release countdown_files/styles.css">
+
+    <div class="content">
+      <img src="./Silksong release countdown_files/TITLE.png" class="logo">
+      <br>
+      <bold id="message" class="center message">Silksong releases in 10 days, 4 hours, 30 minutes, and 31 seconds.</bold>
+      <br>
+      <br>
+
+      <!-- <form class="center">
+        <label for="window">Release window: </label>
+        <select name="window" id="window">
+          <option value="31/12/2025">Nintendo</option>
+          <option value="18/9/2025">ACMI Game Worlds</option>
+        </select>
+      </form> -->
+      <br>
+
+      <script>
+        window.allowSubmit = false;
+        const date = new Date("2025-09-04T17:00:00Z");
+        const timeToGo = (d) => {
+          let diff = d - new Date();
+
+          let sign = diff < 0 ? "-" : "";
+          diff = Math.abs(diff);
+
+          let hours = (diff / 3.6e6) | 0;
+          let mins = ((diff % 3.6e6) / 6e4) | 0;
+          let secs = Math.round((diff % 6e4) / 1e3);
+
+          const trailS = (val) => (val > 1 ? "s" : "");
+
+          return `${parseInt(hours / 24)} days, ${hours % 24} hour${trailS(
+            hours
+          )}, ${mins} minute${trailS(mins)}, and ${secs} second${trailS(
+            secs
+          )}.`;
+        };
+
+        const refresh = (date) => {
+          const time = timeToGo(date);
+          const msgbox = document.getElementById("message");
+          msgbox.textContent = `Silksong releases in ${time}`;
+        };
+        setInterval(() => {
+          refresh(date);
+        }, 1);
+      </script>
+      <br>
+      <footer class="foot">
+        Made by
+        <a class="link" href="https://twitter.com/PharloomMathGuy">@PharloomMathGuy</a>
+        on Twitter
+        <br>
+        All art belongs to Team Cherry
+      </footer>
+    </div>
+    <video autoplay="" muted="" loop="" id="bg-vid">
+      <source src="background.webm" type="video/webm">
+    </video>
+  
+
+</body></html>
